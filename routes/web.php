@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SpreadsheetController;
+use App\Http\Controllers\ExcelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('spreadsheet',[SpreadsheetController::class,'index'])->name('spreadsheet.index');
+// routes/api.php
+
+Route::post('/spreadsheet/store',[SpreadsheetController::class,'store'])->name('insert');
